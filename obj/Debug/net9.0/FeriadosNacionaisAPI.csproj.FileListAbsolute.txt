@@ -1,0 +1,14 @@
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/bin/Debug/net9.0/FeriadosNacionaisAPI
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/bin/Debug/net9.0/FeriadosNacionaisAPI.deps.json
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/bin/Debug/net9.0/FeriadosNacionaisAPI.runtimeconfig.json
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/bin/Debug/net9.0/FeriadosNacionaisAPI.dll
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/bin/Debug/net9.0/FeriadosNacionaisAPI.pdb
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.AssemblyInfoInputs.cache
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.AssemblyInfo.cs
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.csproj.CoreCompileInputs.cache
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.dll
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/refint/FeriadosNacionaisAPI.dll
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.pdb
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/FeriadosNacionaisAPI.genruntimeconfig.cache
+/Volumes/KINGSTON/Projetos/FeriadosNacionaisAPI/obj/Debug/net9.0/ref/FeriadosNacionaisAPI.dll
