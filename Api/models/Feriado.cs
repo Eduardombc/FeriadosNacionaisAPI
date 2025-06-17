@@ -1,5 +1,6 @@
 public class Feriado
 {
+    public int Id { get; set; }
     public DateOnly Date { get; set; }
     public string? LocalName { get; set; }
     public string? Name { get; set; }

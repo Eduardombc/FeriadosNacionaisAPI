@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
-namespace FeriadosNacionaisAPI.Controllers
+namespace FeriadosNacionaisAPI.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
