@@ -28,8 +28,19 @@ namespace FeriadosNacionaisAPI.Controllers
         {
             // Pega feriados nacionais do Brasil de 2025 e salva dentro da variável json
             string json = await _httpClient.GetStringAsync("https://date.nager.at/api/v3/PublicHolidays/2025/BR");
+
+            // Linha adicionada para depuração
+            //Console.WriteLine("JSON recebido: ");
+            //Console.WriteLine(json); // Imprime o JSON no console para depuração
+            //Console.WriteLine("Fim do JSON recebido.");
+
+            // Define as opções de serialização JSON
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true // Permite que as propriedades sejam lidas sem diferenciar maiúsculas de minúsculas
+            };
             // Para deserializar o JSON, usamos a biblioteca System.Text.Json
-            var feriados = JsonSerializer.Deserialize<List<Feriado>>(json);
+            var feriados = JsonSerializer.Deserialize<List<Feriado>>(json, options);
             // - Ok: Retorna um resultado HTTP 200 OK com a lista de feriados.
             return Ok(feriados);
 
