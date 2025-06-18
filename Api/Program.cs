@@ -1,6 +1,9 @@
 using FeriadosNacionaisAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using FeriadosNacionaisAPI.Api.Services;
+using FeriadosNacionaisAPI.Api.Services.Interfaces;
+using FeriadosNacionaisAPI.Api.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,12 +26,11 @@ builder.Services.AddScoped<IFeriadoService, FeriadoService>();
 builder.Services.AddDbContext<FeriadosDbContext>(options =>
     options.UseSqlite("Data Source=FeriadosNacionais.db"));
 
+// Registra o HttpClient com a URL base da API de feriados
+builder.Services.Configure<NagerDateApiSettings>(builder.Configuration.GetSection("NagerDateApiSettings"));
+
 var app = builder.Build();
 
-// Um endpoint de teste para saber que está funcionando
-// app.MapGet("/", () => "O servidor está no ar!");
-
-// Configura o uso do Swagger apenas em ambiente de desenvolvimento
 if (app.Environment.IsDevelopment())
 {
     // Expõe o arquivo JSON do Swagger
@@ -44,4 +46,4 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 // Inicia o servidor
-app.Run();
+await app.RunAsync();

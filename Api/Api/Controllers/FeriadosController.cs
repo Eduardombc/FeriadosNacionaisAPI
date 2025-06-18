@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using FeriadosNacionaisAPI.Api.Services;
+using FeriadosNacionaisAPI.Api.Models;
+using FeriadosNacionaisAPI.Api.Services.Interfaces;
 
 namespace FeriadosNacionaisAPI.Api.Controllers
 {

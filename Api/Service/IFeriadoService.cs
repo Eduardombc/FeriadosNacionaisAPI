@@ -1,4 +1,7 @@
-namespace FeriadosNacionaisAPI.Api.Services
+using FeriadosNacionaisAPI.Api.Models;
+
+
+namespace FeriadosNacionaisAPI.Api.Services.Interfaces
 {
     public interface IFeriadoService
     {

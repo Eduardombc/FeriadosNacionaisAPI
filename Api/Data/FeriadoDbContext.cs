@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using FeriadosNacionaisAPI.Api.Models;
 
 namespace FeriadosNacionaisAPI.Data
 {

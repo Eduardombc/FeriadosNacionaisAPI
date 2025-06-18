@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using FeriadosNacionaisAPI.Data;
 using System.Text.Json;
-using FeriadosNacionaisAPI.Api.Services;
+using FeriadosNacionaisAPI.Api.Services.Interfaces;
+using FeriadosNacionaisAPI.Api.Configuration;
+using Microsoft.Extensions.Options;
+using FeriadosNacionaisAPI.Api.Models;
 
 namespace FeriadosNacionaisAPI.Api.Services
 {
@@ -9,11 +12,13 @@ namespace FeriadosNacionaisAPI.Api.Services
     {
         private readonly FeriadosDbContext _context;
         private readonly HttpClient _httpClient;
+        private readonly NagerDateApiSettings _nagerDateApiSettings;
 
-        public FeriadoService(HttpClient httpClient, FeriadosDbContext context)
+        public FeriadoService(HttpClient httpClient, FeriadosDbContext context, IOptions<NagerDateApiSettings> nagerDateApiSettings)
         {
             _httpClient = httpClient;
             _context = context;
+            _nagerDateApiSettings = nagerDateApiSettings.Value;
         }
 
         public async Task<List<Feriado>> ObterFeriadosAsync()
@@ -26,13 +31,10 @@ namespace FeriadosNacionaisAPI.Api.Services
                 // Retorna um resultado HTTP 200 OK com a lista de feriados do banco de dados
                 return (feriadosdoDB);
             }
-            // Pega feriados nacionais do Brasil de 2025 e salva dentro da variável json
-            string json = await _httpClient.GetStringAsync("https://date.nager.at/api/v3/PublicHolidays/2025/BR");
 
-            // Linha adicionada para depuração
-            //Console.WriteLine("JSON recebido: ");
-            //Console.WriteLine(json); // Imprime o JSON no console para depuração
-            //Console.WriteLine("Fim do JSON recebido.");
+            string url = $"{_nagerDateApiSettings.BaseUrl}PublicHolidays/2025/BR";
+            // Pega feriados nacionais do Brasil de 2025 e salva dentro da variável json
+            string json = await _httpClient.GetStringAsync(url);
 
             // Define as opções de serialização JSON
             var options = new JsonSerializerOptions

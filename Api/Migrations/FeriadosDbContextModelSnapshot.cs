@@ -3,19 +3,16 @@ using System;
 using FeriadosNacionaisAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace Api.Migrations
 {
-    [DbContext(typeof(FeriadoDbContext))]
-    [Migration("20250617162456_InitialCreate")]
-    partial class InitialCreate
+    [DbContext(typeof(FeriadosDbContext))]
+    partial class FeriadosDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
