@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 namespace FeriadosNacionaisAPI.Data
 {
     // Classe FeriadoDbContext que herda de DbContext
-    public class FeriadoDbContext : DbContext
+    public class FeriadosDbContext : DbContext
     {
         // Construtor que recebe opções de configuração do DbContext
-        public FeriadoDbContext(DbContextOptions<FeriadoDbContext> options) : base(options)
+        public FeriadosDbContext(DbContextOptions<FeriadosDbContext> options) : base(options)
         {
         }
 

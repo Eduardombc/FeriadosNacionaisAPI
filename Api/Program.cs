@@ -1,5 +1,6 @@
 using FeriadosNacionaisAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using FeriadosNacionaisAPI.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +16,11 @@ builder.Services.AddEndpointsApiExplorer();
 // Adiciona o Swagger para documentação da API
 builder.Services.AddSwaggerGen();
 
+// Adiciona o serviço de FeriadoService para injeção de dependência
+builder.Services.AddScoped<IFeriadoService, FeriadoService>();
+
 // Configura o Entity Framework Core com o banco de dados em memória
-builder.Services.AddDbContext<FeriadoDbContext>(options =>
+builder.Services.AddDbContext<FeriadosDbContext>(options =>
     options.UseSqlite("Data Source=FeriadosNacionais.db"));
 
 var app = builder.Build();
