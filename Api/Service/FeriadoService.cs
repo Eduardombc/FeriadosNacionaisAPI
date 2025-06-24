@@ -12,6 +12,7 @@ namespace FeriadosNacionaisAPI.Api.Services
     {
         private readonly FeriadosDbContext _context;
         private readonly HttpClient _httpClient;
+
         private readonly NagerDateApiSettings _nagerDateApiSettings;
 
         public FeriadoService(HttpClient httpClient, FeriadosDbContext context, IOptions<NagerDateApiSettings> nagerDateApiSettings)
@@ -32,9 +33,9 @@ namespace FeriadosNacionaisAPI.Api.Services
                 return (feriadosdoDB);
             }
 
-            string url = $"{_nagerDateApiSettings.BaseUrl}PublicHolidays/2025/BR";
+            string endpoint = "PublicHolidays/2025/BR";
             // Pega feriados nacionais do Brasil de 2025 e salva dentro da variável json
-            string json = await _httpClient.GetStringAsync(url);
+            string json = await _httpClient.GetStringAsync(endpoint);
 
             // Define as opções de serialização JSON
             var options = new JsonSerializerOptions
